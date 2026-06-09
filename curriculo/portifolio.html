@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe4f2, #f5f6fa, #ffe1ec);
+            color: #111827;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            background: linear-gradient(90deg, #ec4899, #f472b6, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #6b7280;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ec4899;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 16px;
+            background: #ffffffcc;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            backdrop-filter: blur(8px);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .swiper {
+            padding: 50px 0;
+            width: 100%;
+            max-width: 600px; /* Define um tamanho máximo para o carrossel não ficar gigante */
+            margin: 0 auto;
+        }
+
+        .project-card {
+            position: relative;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transition: 0.5s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(236, 72, 153, 0.85), rgba(236, 72, 153, 0));
+            color: #fff;
+            text-align: left;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ec4899;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #ec4899;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Meus Projetos</h1>
+            <p>Confira abaixo alguns dos meus trabalhos mais recentes</p>
+        </header>
+
+        <section>
+            <div class="intro-text">Aqui estão as minhas atividades durante meu curso.</div>
+        </section>
+
+        <section>
+            <h2>Projetos</h2>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide project-card" data-hash="projeto1">
+                        <img src="/public/foto1.png" alt="Site Pessoal">
+                        <div class="project-overlay">
+                            <div class="project-title">Galeria</div>
+                            <div class="project-desc">Portfólio desenvolvido com HTML, CSS e JavaScript.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto2">
+                        <img src="/public/foto2.png" alt="Perfil"> <div class="project-overlay">
+                            <div class="project-title">Perfil</div>
+                            <div class="project-desc">Projeto interativo usando JavaScript puro.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto3">
+                        <img src="/public/foto3.png" alt="Formulario">
+                        <div class="project-overlay">
+                            <div class="project-title">Formulario</div>
+                            <div class="project-desc">Sistema simples de blog com lógica backend.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto4">
+                        <img src="/public/foto4.png" alt="Carrossel de imagen">
+                        <div class="project-overlay">
+                            <div class="project-title">Carrossel</div>
+                            <div class="project-desc">Loja online funcional com HTML, CSS e JS.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto5">
+                        <img src="/public/foto5.png" alt="Botao">
+                        <div class="project-overlay">
+                            <div class="project-title">Botao</div>
+                            <div class="project-desc">Painel administrativo interativo em JavaScript.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto6">
+                        <img src="/public/foto6.png" alt="Prototipagem">
+                        <div class="project-overlay">
+                            <div class="project-title">Prototipagem</div>
+                            <div class="project-desc">Painel administrativo interativo em JavaScript.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto7">
+                        <img src="/public/foto7.png" alt="Vitrine">
+                        <div class="project-overlay">
+                            <div class="project-title">Vitrine</div>
+                            <div class="project-desc">Painel administrativo interativo em JavaScript.</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide project-card" data-hash="projeto7">
+                        <img src="/public/foto8.png" alt="Sistema de Cinema">
+                        <div class="project-overlay">
+                            <div class="project-title">Sistema de Cinema</div>
+                            <div class="project-desc">Painel administrativo interativo em JavaScript.</div>
+                        </div>
+                    </div>
+
+                    
+                     <div class="swiper-slide project-card" data-hash="projeto7">
+                        <img src="/public/foto9.png" alt="Caixa">
+                        <div class="project-overlay">
+                            <div class="project-title">Caixa</div>
+                            <div class="project-desc">Painel administrativo interativo em JavaScript.</div>
+                        </div>
+                    </div>
+
+                </div> <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            spaceBetween: 30,
+            slidesPerView: 1,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 15,
+                stretch: 0,
+                depth: 150,
+                modifier: 1,
+                slideShadows: false, /* Mudei para false para evitar sombras pretas estranhas nos cantos */
+            },
+            hashNavigation: { watchState: true },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            centeredSlides: true,
+            grabCursor: true,
+        });
+    </script>
+
+</body>
+
+</html>
