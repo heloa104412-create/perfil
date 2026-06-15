@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato Profissional - Portfólio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+    --primary: #ff1bce;
+    --secondary: #f86bc9;
+    --bg-light: #ffffff;
+    --bg-dark: #fad3f5;
+    --text-light: #000000;
+    --text-dark: #aaaaaa;
+    --shadow: rgba(233, 107, 228, 0.3);
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-light), #f0f0f0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transition: background var(--transition);
+}
+
+.card {
+    background: var(--bg-light);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px var(--shadow);
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px var(--shadow);
+}
+
+.card-header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem; /* espaço para ícone */
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all var(--transition);
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(255, 27, 206, 0.3);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #d0d0d0;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: #f200c6;
+    pointer-events: none; /* permite digitar sem bloqueio */
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+.char-counter {
+    font-size: 0.85rem;
+    text-align: right;
+    color: #ffffff;
+    margin-top: 0.3rem;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ea24b5, #ff70d0);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-header {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tema escuro automático */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #ff00bf, #ff7de9);
+    }
+
+    .card {
+        background: var(--bg-dark);
+        color: var(--text-light);
+    }
+
+    input, textarea {
+        background: #eaeaea;
+        border: 1px solid #444;
+        color: var(--text-light);
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #aaa;
+    }
+
+    .char-counter {
+        color: #ccc;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        Proposta de Contratação
+    </div>
+    <div class="card-body">
+        <form id="formContato">
+            <div class="form-group">
+                <label for="nome">Nome do Recrutador / Empresa</label>
+                <i class="fa fa-user input-icon"></i>
+                <input type="text" id="nome" placeholder="Ex: Lara Silva  (Empresa X)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail para contato</label>
+                <i class="fa fa-at input-icon"></i>
+                <input type="email" id="email" placeholder="empresa@exemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vaga">Vaga / Assunto</label>
+                <i class="fa fa-briefcase input-icon"></i>
+                <input type="text" id="vaga" placeholder="Ex: Desenvolvedor Front-End Júnior" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Proposta / Mensagem</label>
+                <i class="fa fa-envelope input-icon"></i>
+                <textarea id="mensagem" placeholder="Olá, gostamos do seu portfólio..." maxlength="1000" required></textarea>
+                <div class="char-counter">0/1000 caracteres</div>
+            </div>
+
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+</div>
+
+<script>
+const mensagem = document.getElementById('mensagem');
+const contador = document.querySelector('.char-counter');
+
+mensagem.addEventListener('input', () => {
+    contador.textContent = `${mensagem.value.length}/1000 caracteres`;
+});
+</script>
+
+</body>
+</html>

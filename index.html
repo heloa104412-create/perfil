@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Currículo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            color: #222;
+            margin: 0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #df00ba;
+            box-shadow: 0 3px 8px rgba(216, 0, 155, 0.5);
+        }
+
+        .nav-link:hover {
+            color: #000 !important;
+        }
+
+        /* HERO */
+        .hero-card {
+            background: linear-gradient(135deg, #FF3BBD, #FFD0FF);
+            color: #000;
+            border-radius: 1rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 28, 206, 0.5);
+            transition: 0.3s;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-card h1 {
+            font-size: 2.8rem;
+        }
+
+        .btn-perfil {
+            background-color: #df00ba;
+            color: #000;
+            border-radius: 50px;
+            padding: 0.7rem 2rem;
+            transition: 0.3s;
+        }
+
+        .btn-perfil:hover {
+            background-color: #ff8be8;
+            transform: scale(1.05);
+        }
+
+        /* CARDS */
+        .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(255, 0, 180, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(255, 0, 180, 0.25);
+        }
+
+        .btn-projetos {
+            background-color: #ff97fd;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-projetos:hover {
+            background-color: #ff35cc;
+            color: #fff;
+        }
+
+        /* FOOTER */
+        .footer-contato {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #ff00bf, #ff7de9);
+            color: #111;
+            padding: 50px 20px;
+            text-align: center;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        .btn-contato {
+            margin-top: 20px;
+            background: #111;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 999px;
+            transition: 0.3s;
+        }
+
+        .btn-contato:hover {
+            background: #fff;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .contato-box {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.4s ease;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 15px;
+            margin-top: 15px;
+            padding: 0 15px;
+        }
+
+        .contato-box.active {
+            max-height: 200px;
+            padding: 15px;
+        }
+
+        /* animação */
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Meu Currículo</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portifolio.html">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formulario.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="container mt-5">
+        <div class="hero-card">
+            <h1>Olá, eu sou a Eloá</h1>
+            <p>Bem-vinda ao meu currículo online </p>
+            <a href="sobre.html" class="btn btn-perfil">Meu Perfil</a>
+        </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="container mt-5">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card p-4 text-center">
+                    <h1>🎓</h1>
+                    <h4>Formação</h4>
+                    <p>Minha trajetória acadêmica.</p>
+                    <a href="formacao.html" class="btn btn-projetos">Ver</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4 text-center">
+                    <h1>💻</h1>
+                    <h4>Habilidades</h4>
+                    <p>Tecnologias que domino.</p>
+                    <a href="habilidades.html" class="btn btn-projetos">Ver</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4 text-center">
+                    <h1>📖</h1>
+                    <h4>Projetos</h4>
+                    <p>Meus trabalhos desenvolvidos.</p>
+                    <a href="portifolio.html" class="btn btn-projetos">Ver</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-contato fade-in">
+
+        <h5>Contato</h5>
+
+        <button class="btn-contato" onclick="toggleContato()">
+            Mostrar Contato
+        </button>
+
+        <div class="contato-box" id="contatoBox">
+            <p>heloa104412@gmail.com</p>
+            <p>(14) 99143-1936</p>
+            <p>Botucatu - SP</p>
+        </div>
+
+        <p class="mt-4">© 2026 - Eloá | Todos os direitos reservados</p>
+
+    </footer>
+
+    <script>
+        function toggleContato() {
+            document.getElementById("contatoBox").classList.toggle("active");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

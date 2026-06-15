@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minhas Habilidades</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  padding:60px 20px;
+  color:#111827;
+  background: linear-gradient(135deg, #ffe4f2, #f5f6fa, #ffe1ec);
+}
+
+/* container */
+.container{
+  max-width:850px;
+  margin:0 auto;
+}
+
+/* título */
+header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+header h1{
+  font-size:34px;
+  font-weight:700;
+  background: linear-gradient(90deg, #ec4899, #f472b6, #db2777);
+  -webkit-background-clip:text ;
+  -webkit-text-fill-color:transparent;
+}
+
+header p{
+  margin-top:8px;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* card */
+.skill{
+  background:#ffffffcc;
+  border:1px solid rgba(236,72,153,0.2);
+  border-radius:14px;
+  padding:18px 22px;
+  margin-bottom:14px;
+  transition:0.3s;
+  backdrop-filter: blur(8px);
+
+  opacity:0;
+  transform:translateY(10px);
+}
+
+.skill.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.skill:hover{
+  transform:translateY(-3px);
+  border:1px solid #f472b6;
+  box-shadow:0 10px 25px rgba(236,72,153,0.15);
+}
+
+/* topo */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:6px;
+}
+
+/* nome */
+.name{
+  font-size:17px;
+  font-weight:600;
+}
+
+/* nível */
+.level{
+  font-size:12px;
+  font-weight:600;
+  padding:4px 10px;
+  border-radius:20px;
+  color:white;
+  background: linear-gradient(90deg, #ec4899, #f472b6);
+}
+
+/* descrição */
+.desc{
+  font-size:14px;
+  color:#4b5563;
+  line-height:1.5;
+}
+
+/* tag */
+.tag{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  padding:4px 12px;
+  border-radius:20px;
+  background: linear-gradient(90deg, #ffe4f2, #ffd1e8);
+  color:#be185d;
+  font-weight:500;
+  border:1px solid rgba(236,72,153,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <h1>Minhas Habilidades</h1>
+  <p>Competências técnicas e experiência em desenvolvimento</p>
+</header>
+
+<div class="skill">
+  <div class="top">
+    <div class="name">HTML</div>
+  </div>
+  <div class="desc">
+    Estruturação semântica de páginas web com foco em organização, acessibilidade e boas práticas modernas de desenvolvimento.
+  </div>
+  <div class="tag">Estrutura web</div>
+</div>
+
+<div class="skill">
+  <div class="top">
+    <div class="name">CSS</div>
+  </div>
+  <div class="desc">
+    Criação de layouts responsivos, estilização moderna e design visual limpo com foco em experiência do usuário.
+  </div>
+  <div class="tag">Design e responsividade</div>
+</div>
+
+<div class="skill">
+  <div class="top">
+    <div class="name">JavaScript</div>
+  </div>
+  <div class="desc">
+    Desenvolvimento de interatividade em páginas web, manipulação de elementos e lógica de programação.
+  </div>
+    <div class="tag">Automação</div>
+</div>
+
+<div class="skill">
+  <div class="top">
+    <div class="name">Python</div>
+  </div>
+  <div class="desc">
+    Criação de scripts, automação de tarefas e desenvolvimento de lógica de programação estruturada.
+  </div>
+  <div class="tag">Automação</div>
+</div>
+
+<div class="skill">
+  <div class="top">
+    <div class="name">React</div>
+  </div>
+  <div class="desc">
+    Introdução ao desenvolvimento de interfaces modernas utilizando componentização.
+  </div>
+  <div class="tag">Componentes UI</div>
+</div>
+
+</div>
+
+<script>
+const skills = document.querySelectorAll(".skill");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+skills.forEach(skill => observer.observe(skill));
+</script>
+
+</body>
+</html>
